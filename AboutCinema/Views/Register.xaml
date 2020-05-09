@@ -1,0 +1,132 @@
+﻿<Page x:Class="AboutCinema.Views.Register"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AboutCinema.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Register"
+      Background="#F7F8F9"
+      Foreground="#43465A"
+      FontFamily="Helvetica">
+
+    <StackPanel Orientation="Vertical"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+        <Label Content="{DynamicResource _RegP_RegTitle}"
+               Margin="0 0 0 30"
+               HorizontalAlignment="Center"
+               FontSize="24"
+               FontWeight="DemiBold"/>
+        <Grid DataContext="{Binding RegisterForm}">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0"
+                   Content="{DynamicResource _RegP_Nick}"
+                   HorizontalContentAlignment="Right"/>
+            <TextBox Grid.Column="1" Grid.Row="0"
+                     Style="{DynamicResource _LogP_TextBox}"
+                     Text="{Binding Nickname}"
+                     Width="120"
+                     Margin="5 0 25 10"/>
+            <Label Grid.Column="0" Grid.Row="1"
+                   Content="{DynamicResource _RegP_Email}"
+                   HorizontalContentAlignment="Right" Margin="0,0.4,0,0.2"/>
+            <TextBox Grid.Column="1" Grid.Row="1"
+                     Style="{DynamicResource _LogP_TextBox}"
+                     Text="{Binding Email}"
+                     Width="120"
+                     Margin="5 0 25 10"/>
+            <Label Grid.Column="0" Grid.Row="2"
+                   Content="{DynamicResource _RegP_Password}"
+                   HorizontalContentAlignment="Right"/>
+            <PasswordBox Grid.Column="1" Grid.Row="2"
+                         x:Name="PasswordTextInput"
+                         Style="{DynamicResource _LogP_PasswordBox}"
+                         Width="120"
+                         Margin="5 0 25 10"/>
+            <Label Grid.Column="0" Grid.Row="3"
+                   Content="{DynamicResource _RegP_RepPassword}"
+                   HorizontalContentAlignment="Right"/>
+            <PasswordBox Grid.Column="1" Grid.Row="3"
+                         x:Name="PasswordConfirmTextInput"
+                         Style="{DynamicResource _LogP_PasswordBox}"
+                         Width="120"
+                         Margin="5 0 25 0"/>
+        </Grid>
+        <StackPanel Orientation="Horizontal"
+                    Margin="0 35 0 0">
+            <Button Content="{DynamicResource _RegP_Back}"
+                    Style="{DynamicResource _LogP_UnobtrusiveButton}"
+                    Command="{Binding BackCommand}"
+                    Width="70"
+                    Margin="15 0 14 0"/>
+            <Border>
+                <Button Content="{DynamicResource _LogP_Register}"
+                        Style="{DynamicResource _LogP_UnobtrusiveButton}"
+                        Command="{Binding RegisterCommand}"
+                        CommandParameter="{Binding ElementName=Passwords}"
+                        Width="150"/>
+            </Border>
+        </StackPanel>
+    </StackPanel>
+</Page>
+    
+    
+    <!--
+        <Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition></ColumnDefinition>
+        <ColumnDefinition></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+    <Label Grid.Column="0" Grid.Row="0"
+                   Content="{DynamicResource _RegP_Nick}"
+                   HorizontalContentAlignment="Right" Grid.ColumnSpan="2" Margin="0,-16,180.2,15.6"/>
+    <TextBox Grid.Column="1" Grid.Row="0"
+                     Style="{DynamicResource _LogP_TextBox}"
+                     Text="{Binding Nickname}"
+                     Width="120"
+                     Margin="5 0 25 10"/>
+    <Label Grid.Column="0" Grid.Row="1"
+                   Content="{DynamicResource _RegP_Email}"
+                   HorizontalContentAlignment="Right" Margin="0,0.4,0,0.2"/>
+    <TextBox Grid.Column="1" Grid.Row="1"
+                     Style="{DynamicResource _LogP_TextBox}"
+                     Text="{Binding Email}"
+                     Width="120"
+                     Margin="5 0 25 10"/>
+    <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
+        <StackPanel Orientation="Horizontal">
+            <Label Content="{DynamicResource _RegP_Password}"
+                           HorizontalContentAlignment="Right"
+                           Margin="123 0 25 10"/>
+            <PasswordBox Style="{DynamicResource _LogP_PasswordBox}"
+                                 Width="120"
+                                 Margin="0 0 45 10"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="{DynamicResource _RegP_RepPassword}"
+                           HorizontalContentAlignment="Right"
+                           Margin="63 0 25 10"/>
+            <PasswordBox Style="{DynamicResource _LogP_PasswordBox}"
+                                 Width="120"
+                                 Margin="0 0 25 0"/>
+        </StackPanel>
+    </StackPanel>
+
+    </Grid>
+    -->

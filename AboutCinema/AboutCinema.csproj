@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73B04677-02F1-4CB3-9EE1-388C9992F461}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AboutCinema</RootNamespace>
+    <AssemblyName>AboutCinema</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=2020.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2020.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AppWindow.xaml.cs">
+      <DependentUpon>AppWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\ServerDbContext.cs" />
+    <Compile Include="example.xaml.cs">
+      <DependentUpon>example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005091027358_finally_initial.cs" />
+    <Compile Include="Migrations\202005091027358_finally_initial.designer.cs">
+      <DependentUpon>202005091027358_finally_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Actor.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Director.cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\LoginForm.cs" />
+    <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\MovieActor.cs" />
+    <Compile Include="Models\MovieDirector.cs" />
+    <Compile Include="Models\MovieGenre.cs" />
+    <Compile Include="Models\Playlist.cs" />
+    <Compile Include="Models\PlaylistMovie.cs" />
+    <Compile Include="Models\RegisterForm.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserPlaylist.cs" />
+    <Compile Include="ViewModels\AppWindowViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\AuthorizationWindowViewModel.cs" />
+    <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\RellayCommand.cs" />
+    <Compile Include="Views\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Movies.xaml.cs">
+      <DependentUpon>Movies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AppWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Localization\ruLang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AuthorizationWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuthorizationWindow.xaml.cs">
+      <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\LightTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Movies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Migrations\202005091027358_finally_initial.resx">
+      <DependentUpon>202005091027358_finally_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\series.png" />
+    <Resource Include="Icons\playlists.png" />
+    <Resource Include="Icons\search.png" />
+    <Resource Include="Icons\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\home.png" />
+    <Resource Include="Icons\home2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\food-and-restaurant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\film1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MoviePics\Джентльмены.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MoviePics\Безумие.png" />
+    <Resource Include="Images\MoviePics\Мисс_Скарлет_и_Герцог.png" />
+    <Resource Include="Images\MoviePics\Последний_министр.png" />
+    <Resource Include="Images\MoviePics\Проект_Анна_Николаевна.png" />
+    <Resource Include="Images\MoviePics\Рик_и_Морти.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MoviePics\Агенты_ЩИТ.png" />
+    <Resource Include="Images\MoviePics\Капитан_Марвел.png" />
+    <Resource Include="Images\MoviePics\Мстители_Война_бесконечности.png" />
+    <Resource Include="Images\MoviePics\Плащ_и_Кинжал.png" />
+    <Resource Include="Images\MoviePics\Человек-муравей_и_Оса.png" />
+    <Resource Include="Images\MoviePics\Черная_Пантера.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MoviePics\28_панфиловцев.png" />
+    <Resource Include="Images\MoviePics\Битва_за_Севастополь.png" />
+    <Resource Include="Images\MoviePics\Брестская_крепость.png" />
+    <Resource Include="Images\MoviePics\Великая_война.png" />
+    <Resource Include="Images\MoviePics\Звезда.png" />
+    <Resource Include="Images\MoviePics\Проверка_на_дорогах.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MoviePics\Миа_и_белый_лев.png" />
+    <Resource Include="Images\MoviePics\Мэри_Поппинс_возвращается.png" />
+    <Resource Include="Images\MoviePics\Ничего_себе_каникулы.png" />
+    <Resource Include="Images\MoviePics\Путь_домой.png" />
+    <Resource Include="Images\MoviePics\Середина_90-х.png" />
+    <Resource Include="Images\MoviePics\Та_еще_парочка.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MoviePics\Величайший_кутюрье.jpg" />
+    <Resource Include="Images\MoviePics\Война_и_мир.jpg" />
+    <Resource Include="Images\MoviePics\Вудсток_Три дня,_изменившие_поколение.jpg" />
+    <Resource Include="Images\MoviePics\Герой_нашего_времени.jpg" />
+    <Resource Include="Images\MoviePics\Гордость_и_предубеждение_и_зомби.jpg" />
+    <Resource Include="Images\MoviePics\Город_героев.png" />
+    <Resource Include="Images\MoviePics\Дети_моря.jpg" />
+    <Resource Include="Images\MoviePics\Джейн_Эйр.jpg" />
+    <Resource Include="Images\MoviePics\Джуди.jpg" />
+    <Resource Include="Images\MoviePics\Доктор_Живаго.jpg" />
+    <Resource Include="Images\MoviePics\Жена.jpg" />
+    <Resource Include="Images\MoviePics\Зверополис.png" />
+    <Resource Include="Images\MoviePics\Каннингем.jpg" />
+    <Resource Include="Images\MoviePics\Коммивояжер.jpg" />
+    <Resource Include="Images\MoviePics\Ла-Ла_Ленд.jpg" />
+    <Resource Include="Images\MoviePics\Лекарь_Ученик_Авиценны.jpg" />
+    <Resource Include="Images\MoviePics\Мастер_и_Маргарита.jpg" />
+    <Resource Include="Images\MoviePics\Моана.png" />
+    <Resource Include="Images\MoviePics\Новая_эра_Z.jpg" />
+    <Resource Include="Images\MoviePics\Отверженные.jpg" />
+    <Resource Include="Images\MoviePics\Пи_Джей_Харви.jpg" />
+    <Resource Include="Images\MoviePics\Поезд_в_Пусан.jpg" />
+    <Resource Include="Images\MoviePics\Равные.jpg" />
+    <Resource Include="Images\MoviePics\Ральф.png" />
+    <Resource Include="Images\MoviePics\Ральф_против_интернета.png" />
+    <Resource Include="Images\MoviePics\Связанные_миры.jpg" />
+    <Resource Include="Images\MoviePics\Соберись_перед_прыжком.jpg" />
+    <Resource Include="Images\MoviePics\Студия_54.jpg" />
+    <Resource Include="Images\MoviePics\Тайна_Коко.jpg" />
+    <Resource Include="Images\MoviePics\Тоня_против_всех.jpg" />
+    <Resource Include="Images\MoviePics\Укрась_прощальное_утро_цветами_обещания.jpg" />
+    <Resource Include="Images\MoviePics\Ученик_чудовища.jpg" />
+    <Resource Include="Images\MoviePics\Форма_голоса.jpg" />
+    <Resource Include="Images\MoviePics\Фортитьюд.jpg" />
+    <Resource Include="Images\MoviePics\Хинамацури.jpg" />
+    <Resource Include="Images\MoviePics\Холодное_сердце.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>

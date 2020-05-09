@@ -1,0 +1,64 @@
+﻿<Page x:Class="AboutCinema.Views.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AboutCinema.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Login"
+      Background="#F7F8F9"
+      Foreground="#43465A"
+      FontFamily="Helvetica">
+
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Label Content="{DynamicResource _LogP_LoginOrRegTitle}"
+               Margin="0 0 0 40"
+               HorizontalAlignment="Center"
+               FontSize="24"
+               FontWeight="DemiBold"/>
+        <Grid DataContext="{Binding LoginForm}">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="142*"></ColumnDefinition>
+                <ColumnDefinition Width="200*"></ColumnDefinition>
+                <ColumnDefinition Width="31*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0"
+                   Content="{DynamicResource _LogP_Email}"
+                   HorizontalContentAlignment="Right" Margin="0,0,0.4,23.8" Grid.RowSpan="2"/>
+            <TextBox Grid.Column="1" Grid.Row="0"
+                     Style="{DynamicResource _LogP_TextBox}"
+                     Text ="{Binding Email}"
+                     Width="120"
+                     Margin="5.6,0,74.133,9.8"
+                     AcceptsTab="False"/>
+            <Label Grid.Column="0" Grid.Row="1"
+                   Content="{DynamicResource _LogP_Password}"
+                   HorizontalContentAlignment="Right" Margin="0,0.2,0.4,-0.2"/>
+            <PasswordBox Grid.Column="1" Grid.Row="1"
+                          x:Name="PasswordTextInput"
+                         Style="{DynamicResource _LogP_PasswordBox}"
+                         Width="120"
+                         Margin="5.6,0.2,74.133,0.8"/>
+        </Grid>
+        <StackPanel Orientation="Horizontal"
+                    Margin="0 30 0 0">
+            <Button Name="RegisterBtn"
+                    Content="{DynamicResource _LogP_Register}"
+                    Style="{DynamicResource _LogP_UnobtrusiveButton}"
+                    Command="{Binding RegisterCommand}"
+                    Width="150"
+                    Margin="65 0 17 0"/>
+            <Button Content="{DynamicResource _LogP_Enter}"
+                    Name="EnterBtn"
+                    Style="{DynamicResource _LogP_UnobtrusiveButton}"
+                    Command="{Binding LoginCommand}"
+                    CommandParameter="{Binding ElementName=PasswordTextInput}"
+                    Width="70"/>
+        </StackPanel>
+    </StackPanel>
+</Page>
