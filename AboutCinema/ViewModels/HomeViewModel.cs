@@ -6,7 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
+//using System.Windows.Media.Imaging;
 using AboutCinema.Contexts;
 using AboutCinema.Models;
 using JetBrains.Annotations;
@@ -25,7 +25,9 @@ namespace AboutCinema.ViewModels
         public ObservableCollection<Movie> OscarMovies { get; set; }
         public ObservableCollection<Movie> AboutEpidemicsMovies { get; set; }
         public ObservableCollection<Movie> LiteratureInMovies { get; set; }
+
         private readonly ServerDbContext _dbContext; //добавила readonly
+
         public HomeViewModel()
         {
             _dbContext = new ServerDbContext();

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AboutCinema.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="380" d:DesignWidth="755"
+      d:DesignHeight="370" d:DesignWidth="744"
       Title="Home"
       Background="#F7F8F9"
       Foreground="#43465A"
@@ -15,8 +15,10 @@
     <Grid>
         <ScrollViewer>
             <StackPanel Orientation="Vertical">
-                <TextBlock Text="Новинки" Height="25"/>
-                <ListBox  ItemsSource="{Binding Novelty}" BorderBrush="Black" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <TextBlock Text="Новинки" 
+                           Style="{DynamicResource _FilmTitleInLists}"/>
+                <ListBox  ItemsSource="{Binding Novelty}" 
+                          Style="{DynamicResource _FilmsListBox}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel Orientation="Horizontal"/>
@@ -24,7 +26,7 @@
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate >
                         <DataTemplate>
-                            <Button Height="300" Width="200" Margin="5" Click="Button_Click">
+                            <Button Style="{DynamicResource _OpenFilmButton}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="{Binding MoviePic}"/>
                                 </Button.Background>
@@ -33,8 +35,10 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
                 
-                <TextBlock Text="Киновселенная MARVEL" Height="25"/>
-                <ListBox  ItemsSource="{Binding MarvelMovies}" BorderBrush="Black" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <TextBlock Text="Киновселенная MARVEL" 
+                           Style="{DynamicResource _FilmTitleInLists}"/>
+                <ListBox  ItemsSource="{Binding MarvelMovies}" 
+                          Style="{DynamicResource _FilmsListBox}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel Orientation="Horizontal"/>
@@ -42,7 +46,7 @@
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate >
                         <DataTemplate>
-                            <Button Height="300" Width="200" Margin="5">
+                            <Button Style="{DynamicResource _OpenFilmButton}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="{Binding MoviePic}"/>
                                 </Button.Background>
@@ -51,8 +55,10 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
 
-                <TextBlock Text="День Победы: главные фильмы и сериалы" Height="25"/>
-                <ListBox  ItemsSource="{Binding VictoryDayMovies}" BorderBrush="Black" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <TextBlock Text="День Победы: главные фильмы и сериалы" 
+                           Style="{DynamicResource _FilmTitleInLists}"/>
+                <ListBox  ItemsSource="{Binding VictoryDayMovies}" 
+                          Style="{DynamicResource _FilmsListBox}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel Orientation="Horizontal"/>
@@ -60,7 +66,7 @@
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate >
                         <DataTemplate>
-                            <Button Height="300" Width="200" Margin="5">
+                            <Button Style="{DynamicResource _OpenFilmButton}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="{Binding MoviePic}"/>
                                 </Button.Background>
@@ -69,8 +75,10 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
 
-                <TextBlock Text="Хорошее настроение" Height="25"/>
-                <ListBox  ItemsSource="{Binding GoodMoodMovies}" BorderBrush="Black" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <TextBlock Text="Хорошее настроение" 
+                           Style="{DynamicResource _FilmTitleInLists}"/>
+                <ListBox  ItemsSource="{Binding GoodMoodMovies}" 
+                          Style="{DynamicResource _FilmsListBox}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel Orientation="Horizontal"/>
@@ -78,7 +86,7 @@
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate >
                         <DataTemplate>
-                            <Button Height="300" Width="200" Margin="5">
+                            <Button Style="{DynamicResource _OpenFilmButton}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="{Binding MoviePic}"/>
                                 </Button.Background>
@@ -87,8 +95,10 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
 
-                <TextBlock Text="Детям: Disney" Height="25"/>
-                <ListBox  ItemsSource="{Binding DisneyMovies}" BorderBrush="Black" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <TextBlock Text="Детям: Disney" 
+                           Style="{DynamicResource _FilmTitleInLists}"/>
+                <ListBox  ItemsSource="{Binding DisneyMovies}" 
+                          Style="{DynamicResource _FilmsListBox}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel Orientation="Horizontal"/>
@@ -96,7 +106,7 @@
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate >
                         <DataTemplate>
-                            <Button Height="300" Width="200" Margin="5">
+                            <Button Style="{DynamicResource _OpenFilmButton}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="{Binding MoviePic}"/>
                                 </Button.Background>
@@ -105,8 +115,10 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
 
-                <TextBlock Text="Beat Film Festival: лучшее" Height="25"/>
-                <ListBox  ItemsSource="{Binding BeatFilmFestivalMovies}" BorderBrush="Black" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <TextBlock Text="Beat Film Festival: лучшее" 
+                           Style="{DynamicResource _FilmTitleInLists}"/>
+                <ListBox  ItemsSource="{Binding BeatFilmFestivalMovies}" 
+                          Style="{DynamicResource _FilmsListBox}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel Orientation="Horizontal"/>
@@ -114,7 +126,7 @@
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate >
                         <DataTemplate>
-                            <Button Height="300" Width="200" Margin="5">
+                            <Button Style="{DynamicResource _OpenFilmButton}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="{Binding MoviePic}"/>
                                 </Button.Background>
@@ -123,8 +135,10 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
 
-                <TextBlock Text="Аниме" Height="25"/>
-                <ListBox  ItemsSource="{Binding AnimeMovies}" BorderBrush="Black" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <TextBlock Text="Аниме" 
+                           Style="{DynamicResource _FilmTitleInLists}"/>
+                <ListBox  ItemsSource="{Binding AnimeMovies}" 
+                          Style="{DynamicResource _FilmsListBox}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel Orientation="Horizontal"/>
@@ -132,7 +146,7 @@
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate >
                         <DataTemplate>
-                            <Button Height="300" Width="200" Margin="5">
+                            <Button Style="{DynamicResource _OpenFilmButton}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="{Binding MoviePic}"/>
                                 </Button.Background>
@@ -141,8 +155,10 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
 
-                <TextBlock Text="Лауреты и номинанты &quot;Оскара&quot;" Height="25"/>
-                <ListBox  ItemsSource="{Binding OscarMovies}" BorderBrush="Black" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <TextBlock Text="Лауреты и номинанты &quot;Оскара&quot;" 
+                           Style="{DynamicResource _FilmTitleInLists}"/>
+                <ListBox  ItemsSource="{Binding OscarMovies}" 
+                          Style="{DynamicResource _FilmsListBox}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel Orientation="Horizontal"/>
@@ -150,7 +166,7 @@
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate >
                         <DataTemplate>
-                            <Button Height="300" Width="200" Margin="5">
+                            <Button Style="{DynamicResource _OpenFilmButton}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="{Binding MoviePic}"/>
                                 </Button.Background>
@@ -159,8 +175,10 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
 
-                <TextBlock Text="Кино про эпидемии" Height="25"/>
-                <ListBox  ItemsSource="{Binding AboutEpidemicsMovies}" BorderBrush="Black" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <TextBlock Text="Кино про эпидемии" 
+                           Style="{DynamicResource _FilmTitleInLists}"/>
+                <ListBox  ItemsSource="{Binding AboutEpidemicsMovies}" 
+                          Style="{DynamicResource _FilmsListBox}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel Orientation="Horizontal"/>
@@ -168,7 +186,7 @@
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate >
                         <DataTemplate>
-                            <Button Height="300" Width="200" Margin="5">
+                            <Button Style="{DynamicResource _OpenFilmButton}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="{Binding MoviePic}"/>
                                 </Button.Background>
@@ -177,8 +195,10 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
 
-                <TextBlock Text="Литература в кино" Height="25"/>
-                <ListBox  ItemsSource="{Binding LiteratureInMovies}" BorderBrush="Black" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <TextBlock Text="Литература в кино" 
+                           Style="{DynamicResource _FilmTitleInLists}"/>
+                <ListBox  ItemsSource="{Binding LiteratureInMovies}" 
+                          Style="{DynamicResource _FilmsListBox}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel Orientation="Horizontal"/>
@@ -186,7 +206,7 @@
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate >
                         <DataTemplate>
-                            <Button Height="300" Width="200" Margin="5">
+                            <Button Style="{DynamicResource _OpenFilmButton}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="{Binding MoviePic}"/>
                                 </Button.Background>

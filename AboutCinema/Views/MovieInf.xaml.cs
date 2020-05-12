@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace AboutCinema.Views
 {
     /// <summary>
-    /// Логика взаимодействия для Movies.xaml
+    /// Логика взаимодействия для MovieInf.xaml
     /// </summary>
-    public partial class Movies : Page
+    public partial class MovieInf : Page
     {
-        public Movies()
+        public MovieInf()
         {
             InitializeComponent();
-            DataContext = App.MoviesViewModel;
         }
     }
 }

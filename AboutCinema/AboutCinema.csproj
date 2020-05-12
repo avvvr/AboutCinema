@@ -94,10 +94,12 @@
     <Compile Include="Models\RegisterForm.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserPlaylist.cs" />
+    <Compile Include="ViewModels\AboutMovieBaseViewModel.cs" />
     <Compile Include="ViewModels\AppWindowViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\AuthorizationWindowViewModel.cs" />
+    <Compile Include="ViewModels\MoviesViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\RellayCommand.cs" />
     <Compile Include="Views\Home.xaml.cs">
@@ -105,6 +107,9 @@
     </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MovieInf.xaml.cs">
+      <DependentUpon>MovieInf.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Movies.xaml.cs">
       <DependentUpon>Movies.xaml</DependentUpon>
@@ -145,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MovieInf.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

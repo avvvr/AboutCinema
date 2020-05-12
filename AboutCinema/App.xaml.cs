@@ -23,6 +23,8 @@ namespace AboutCinema
 
         public static ViewModels.AppWindowViewModel AppWindowViewModel { get; set; } = new AppWindowViewModel();
         public static ViewModels.HomeViewModel HomeViewModel { get; set; } = new HomeViewModel();
+        public static ViewModels.MoviesViewModel MoviesViewModel { get; set; } = new MoviesViewModel();
         public static Home HomePage = new Home();
+        public static Movies MoviesPage = new Movies();
     }
 }

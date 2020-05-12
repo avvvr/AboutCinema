@@ -6,25 +6,26 @@
         mc:Ignorable="d"
         Title="AppWindow" Height="450" Width="800"
         Background="#F7F8F9"
-        Foreground="#43465A">
+        Foreground="#CDD4DB"
+        FontFamily="Helvetica">
     <Window.Resources>
         <Storyboard x:Key="OpenMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" 
                                            Storyboard.TargetName="GridMenu">
                 <EasingDoubleKeyFrame KeyTime="0" 
-                                      Value="40"/>
-                <!--походу ширина блока-->
+                                      Value="50"/>
+                <!--ширина блока-->
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" 
-                                      Value="100"/>
+                                      Value="140"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="CloseMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" 
                                            Storyboard.TargetName="GridMenu">
                 <EasingDoubleKeyFrame KeyTime="0" 
-                                      Value="110"/>
+                                      Value="140"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" 
-                                      Value="40"/>
+                                      Value="50"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
@@ -44,7 +45,7 @@
             <ColumnDefinition Width="236*"/>
             <ColumnDefinition Width="557*"/>
         </Grid.ColumnDefinitions>
-        <Rectangle Height="40" 
+        <Rectangle Height="50" 
                    VerticalAlignment="Top" 
                    HorizontalAlignment="Stretch" 
                    Fill="White" 
@@ -56,13 +57,15 @@
                                   ShadowDepth="2"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Frame Content="{Binding CurrentPage}" Grid.ColumnSpan="2" 
-               Margin="40,40,-1.4,0.4"/>
+        <Frame Content="{Binding CurrentPage}" 
+               Grid.ColumnSpan="2" 
+               Margin="50,50,-1.4,0" 
+               NavigationUIVisibility="Hidden"/>
         <Ellipse HorizontalAlignment="Left" 
-                 Height="32" 
-                 Margin="5,5,0,0" 
+                 Height="36" 
+                 Margin="7,7,0,0" 
                  VerticalAlignment="Top" 
-                 Width="32" 
+                 Width="36" 
                  Panel.ZIndex="2" 
                  Stroke="#FF8F8F8F" 
                  StrokeThickness="0.5"/>
@@ -70,9 +73,9 @@
         <Grid x:Name="GridMenu"  
               Background="White" 
               HorizontalAlignment="Left" 
-              Margin="0,40,0,0" 
+              Margin="0,50,0,0" 
               VerticalAlignment="Stretch" 
-              Width="40">
+              Width="50">
             <Grid.Effect>
                 <DropShadowEffect Opacity="0.3" 
                                   Direction="340" 
@@ -91,11 +94,11 @@
                         </TransformGroup>
                     </Grid.RenderTransform>
                     <Button x:Name="ButtonOpenMenu" 
-                            Height="40" 
-                            Width="40" 
-                            Margin="5" 
-                            HorizontalAlignment="Right" 
-                            VerticalAlignment="Top"
+                            Height="30" 
+                            Width="30" 
+                            Margin="0 15 0 0" 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center"
                             BorderBrush="{x:Null}"
                             Click="ButtonOpenMenu_Click">
                         <Button.Background>
@@ -106,9 +109,9 @@
                     </Button>
                     <Button x:Name="ButtonCloseMenu" 
                             Visibility="Collapsed" 
-                            Height="40" 
-                            Width="40" 
-                            Margin="5" 
+                            Height="30" 
+                            Width="30" 
+                            Margin="0 15 0 0" 
                             HorizontalAlignment="Right" 
                             VerticalAlignment="Top"
                             BorderBrush="{x:Null}" 
@@ -121,19 +124,21 @@
                 </Grid>
                 <ListView x:Name="ListViewMenu" 
                           Foreground="#FF5C99D6" 
-                          ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
-                          SelectionChanged="ListViewMenu_SelectionChanged">
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          Margin="0 10 0 0"
+                          BorderThickness="0">
 
                     <ListViewItem x:Name="ItemHome" 
                                   Height="40">
-                        <Button Background="{x:Null}" BorderBrush="{x:Null}">
+                        <Button Style="{DynamicResource ButtonTemplate}">
                             <Button.Content>
-                                <StackPanel Orientation="Horizontal">
+                                <StackPanel Orientation="Horizontal"
+                                            Margin="5">
                                     <Image Source="Icons/home.png"
                                            Width="24"/>
-                                    <TextBlock Text="Home"
-                                               VerticalAlignment="Center"
-                                               Margin="20 5"/>
+                                    <TextBlock Text="Домашняя"
+                                               Margin="20 5"
+                                               VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Button.Content>
                         </Button>
@@ -141,12 +146,14 @@
 
                     <ListViewItem x:Name="ItemCreate" 
                                   Height="40">
-                        <Button Background="{x:Null}" BorderBrush="{x:Null}">
+                        <Button Background="{x:Null}" 
+                                BorderBrush="{x:Null}">
                             <Button.Content>
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="5">
                             <Image Source="Icons/search.png" 
                                    Width="24"/>
-                            <TextBlock Text="Search" 
+                            <TextBlock Text="Поиск" 
                                        VerticalAlignment="Center" 
                                        Margin="20 5"/>
                         </StackPanel>
@@ -156,12 +163,15 @@
                     </ListViewItem>
 
                     <ListViewItem Height="40">
-                        <Button Background="{x:Null}" BorderBrush="{x:Null}">
+                        <Button Background="{x:Null}" 
+                                BorderBrush="{x:Null}" 
+                                Command="{Binding MoviePageCommand}">
                             <Button.Content>
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="5">
                             <Image Source="Icons/film1.png" 
                                    Width="24"/>
-                            <TextBlock Text="Movies" 
+                            <TextBlock Text="Фильмы" 
                                        VerticalAlignment="Center"  
                                        Margin="20 5"/>
                         </StackPanel>
@@ -173,10 +183,11 @@
                     <ListViewItem Height="40">
                         <Button Background="{x:Null}" BorderBrush="{x:Null}">
                             <Button.Content>
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="5">
                             <Image Source="Icons/series.png" 
                                    Width="24"/>
-                            <TextBlock Text="Series" 
+                            <TextBlock Text="Сериалы" 
                                        VerticalAlignment="Center"  
                                        Margin="20 5"/>
                         </StackPanel>
@@ -188,12 +199,14 @@
                     <ListViewItem Height="40">
                         <Button Background="{x:Null}" BorderBrush="{x:Null}">
                             <Button.Content>
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="5">
                             <Image Source="Icons/playlists.png" 
                                    Width="24"/>
-                            <TextBlock Text="Playlists" 
+                            <TextBlock Text="Плейлисты" 
                                        VerticalAlignment="Center"  
-                                       Margin="20 5"/>
+                                       Margin="20 5"
+                                       Height="18"/>
                         </StackPanel>
 
                             </Button.Content>
@@ -203,12 +216,14 @@
                     <ListViewItem Height="40">
                         <Button Background="{x:Null}" BorderBrush="{x:Null}">
                             <Button.Content>
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="5">
                             <Image Source="Icons/settings.png" 
                                    Width="24"/>
-                            <TextBlock Text="Settings" 
-                                       VerticalAlignment="Center"  
-                                       Margin="20 5"/>
+                            <TextBlock Text="Настройки" 
+                                       VerticalAlignment="Center"
+                                       Margin="20 5"
+                                       Height="17"/>
                         </StackPanel>
 
                             </Button.Content>

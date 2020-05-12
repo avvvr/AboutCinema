@@ -93,6 +93,45 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    <!--МЕНЮ-->
+    <!--MenuButton
+    <Style x:Key="_MenuButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Ba" Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>-->
+
+    <ControlTemplate x:Key="ButtonTemplate" TargetType="Button">
+        <Border BorderBrush="Orange" BorderThickness="2" CornerRadius="2" Name="border"
+                    TextBlock.Foreground="White">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="LimeGreen"></GradientStop>
+                        <GradientStop Offset="1" Color="LightBlue"></GradientStop>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </Border.Background>
+            <ContentPresenter RecognizesAccessKey="True" Margin="{TemplateBinding Padding}"></ContentPresenter>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="border" Property="Background" Value="Red"></Setter>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="border" Property="BorderBrush" Value="Yellow"></Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <!---->
+    
 
     <!--Скроллбар-->
     <Style x:Key="ScrollBarLineButtonStyle" TargetType="{x:Type RepeatButton}">
@@ -179,4 +218,34 @@
         <Setter Property="Template" Value="{StaticResource VerticalScrollBar}"/>
     </Style>
 
+    <!--Listbox-ы с фильмами-->
+    <Style x:Key="_FilmsListBox" TargetType="ListBox">
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+    </Style>
+    
+    <!--ListItems-ы-->
+    <Style x:Key="_FilmsListItem" TargetType="ListBoxItem">
+        <Setter Property="Margin" Value=""/>
+    </Style>
+    
+    <!--Buttons под картинками с фильмами-->
+    <Style x:Key="_OpenFilmButton" TargetType="Button">
+        <Setter Property="Height" Value="300"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Margin" Value="20 0 12 0"/>
+        <Setter Property="BorderThickness" Value="0.5"/>
+        <Setter Property="BorderBrush" Value="#A7B0C1"/>
+    </Style>
+    
+    <!--Заголовки фильмов-->
+    <Style x:Key="_FilmTitleInLists" TargetType="TextBlock">
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="FontFamily" Value="Helvetica"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Foreground" Value="#43465A"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Margin" Value="25 30 0 10"/>
+    </Style>
 </ResourceDictionary>

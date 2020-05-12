@@ -29,7 +29,9 @@
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Grid.Row="0"
                    Content="{DynamicResource _LogP_Email}"
-                   HorizontalContentAlignment="Right" Margin="0,0,0.4,23.8" Grid.RowSpan="2"/>
+                   HorizontalContentAlignment="Right"
+                   Margin="0,0,0.4,23.8" 
+                   Grid.RowSpan="2"/>
             <TextBox Grid.Column="1" Grid.Row="0"
                      Style="{DynamicResource _LogP_TextBox}"
                      Text ="{Binding Email}"
